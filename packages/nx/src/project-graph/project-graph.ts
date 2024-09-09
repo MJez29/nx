@@ -251,6 +251,8 @@ export async function createProjectGraphAndSourceMapsAsync(
 ) {
   performance.mark('create-project-graph-async:start');
 
+  output.logSingleLine('Creating project graph');
+
   if (!daemonClient.enabled()) {
     try {
       const res = await buildProjectGraphAndSourceMapsWithoutDaemon();
